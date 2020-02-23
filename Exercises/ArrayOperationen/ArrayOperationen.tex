@@ -1,0 +1,85 @@
+\documentclass[12pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex	
+\usepackage{xcolor}
+				
+\usepackage{minted}
+								
+\usepackage{amssymb}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+%SetFonts
+
+%SetFonts
+
+
+\title{
+Array Operationen \\
+\vspace{0.3cm}
+%\large Eine Klasse um verschiedene Operationen an int-Arrays durchführen zu können.
+}
+%\author{Lukas Wais}
+\date{}							% Activate to display a given date or no date
+
+\begin{document}
+ \setlength{\parindent}{0em} 
+\maketitle
+
+\section{Aufgabe}
+
+Die Klasse \textit{ArrayOperations} soll dazu dienen, verschiedene Operationen an int$-$Arrays durchzuführen. \\
+
+\vspace{0.5cm}
+
+Diese Operationen sind
+\begin{itemize}
+	\item Ausgabe des unsortierten Arrays
+	\item Ausgabe des sortierten Arrays
+	\item Rückgabe (return) des unsortierten Arrays
+	\item Rückgabe (return) des sortierten Arrays
+	\item Überprüfung ob eine Zahl schon im Array vorkommt
+\end{itemize}
+\vspace{0.5cm}
+\textcolor{red}{Wichtig: } Es werden die öffentliche Schnittstellen getestet. Die \textit{public}$-$Methoden bitte nicht umbenennen. Natürlich ist es erlaubt weitere \textit{privat}$-$Hilfsmethoden zu implementieren.
+
+\vspace{0.5cm}
+Nachdem es zwei verschiedene Arrays geben soll, sortiert und unsortiert, könnte die \textit{clone}$-$Funktion von Arrays hilfreich sein.\\
+
+\begin{minted}{Java}
+int[] sorted = numbers.clone();
+\end{minted}
+\vspace{0.5cm}
+\section*{Skeleton}
+Das Skeleton ist unter folgendem Link zu erreichen: \\ \url{https://gist.github.com/x21L/856f095a38c3e55880622ddfd08e8702} \\ \\
+Des weiteren gibt es auch ein Git-Repository auf Space, welches unter folgendem Link via HTTPS gepullt werden kann: \\ \url{https://git.jetbrains.space/codersbayjava/ArrayOperations.git}
+\newpage
+\section{Aufgabe}
+Mach dich vertraut mit aktuellen Java-Frameworks, Bibliotheken, ... . Überlege dir was dich interessiert und welches Projekt du in der Vertiefung umsetzten möchtest, beziehungsweise in welche Richtung es gehen soll. Das ist keine absolute \\ Entscheidung, sondern soll nur zur ungefähren  Einschätzung euerer Interessen \\ dienen.
+
+\vspace{0.5cm}
+Mache dir ein Paar Stichworte und stelle eine oder mehrere interessante \\ Technologien/Frameworks/Bibliotheken/Konzepte den anderen vor. 
+
+\vspace{0.5cm}
+
+Einige nützliche Websites sind:
+\begin{itemize}
+	\item \url{https://en.wikipedia.org/wiki/List_of_Java_frameworks}
+	\item \url{https://www.javaworld.com/article/2924315/javas-top-20-the-most-used-java-libraries-on-github.html}
+	\item \url{https://opencv.org/}
+	\item \url{https://vaadin.com/}
+	\item \url{https://openjfx.io/}
+	\item \url{https://mvnrepository.com/}
+	\item \url{https://jgrapht.org/}
+\end{itemize}
+
+\end{document}  
+
+
+
+
+
+
+

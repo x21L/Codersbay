@@ -1,0 +1,158 @@
+\documentclass[12pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex	
+\usepackage{xcolor}
+				
+\usepackage{minted}
+								
+\usepackage{amssymb}
+
+%SetFonts
+
+%SetFonts
+
+
+\title{
+Mitarbeiterverwaltung \\
+\vspace{0.3cm}
+\large Einführung in die Objektorientierung
+}
+%\author{Lukas Wais}
+\date{}							% Activate to display a given date or no date
+
+\begin{document}
+ \setlength{\parindent}{0em} 
+\maketitle
+
+\section{Aufgabe}
+
+Erstelle eine Klasse \textit{Department}, diese Klasse repräsentiert eine Abteilung einer Firma. \\  \\
+Folgende Eigenschaften muss eine Abteilung aufweisen:
+\begin{itemize}
+	\item name
+	\item id
+	\item country
+	\item city
+\end{itemize}
+\vspace{0.5cm}
+
+Es soll möglich sein eine "default"-Abteilung erstellen zu können, diese hat die \\ Attribute:
+\begin{itemize}
+	\item name = "Test"
+	\item id = 123
+	\item country = "Neverland"
+	\item city = "Gotham"
+\end{itemize}
+\vspace{0.5cm}
+
+\section{Aufgabe}
+
+Erstelle eine Klasse \textit{Employee}, diese Klasse repräsentiert einen Mitarbeiter in einer Firma. \\  \\
+Folgende Eigenschaften muss ein Mitarbeiter aufweisen:
+\begin{itemize}
+	\item firstName
+	\item lastName
+	\item id
+	\item department
+\end{itemize}
+\vspace{0.5cm}
+
+Des weiteren soll es möglich sein, einen "default" Mitarbeiter anlegen zu können. Dieser soll standardmäßig wie folgt definiert sein:
+\begin{itemize}
+	\item firstName = "Max"
+	\item lastName = "Mustermann"
+	\item id = 123
+	\item Test Abteilung von der \textit{Department} - Klasse
+\end{itemize}
+\vspace{1cm}
+
+Die Methode \textit{print()} soll folgende Konsolenausgabe, dynamisch für jeden \\ Mitarbeiter liefern: \\
+\vspace{0.1cm}
+
+Der Mitarbeiter 	123 Max Mustermanm  arbeitet in der Abteilung Test in Gotham
+\vspace{1cm}
+
+Beide Klassen \textbf{müssen} die isEquals-Methode implementieren. Diese soll auf Basis der ID die Gleichheit zweier Objekte zurückgeben.
+
+\newpage
+
+\section{Aufgabe}
+Die Klasse \textit{App} ist die Hauptapplikation. 
+
+\subsection{Grundfunktionen}
+Implementiere eine \textit{main}-Methode, in der die Funktionen der vorher erstellten Klassen getestet werden können. \\ \\
+
+\textbf{Bonus: } Die IDs sollen zufällig mit Hilfe einer Methode generiert werden.
+
+
+
+\subsection{Konsolenanwendung}
+Programmiere eine Konsolenanwendung, mit der beliebige Mitarbeiter und \\ Departments erzeugt werden können. \\ \\
+Ein Dialog könnte wie folgt aussehen: \\ \\
+\fbox{\parbox{\linewidth}{
+Bitte legen Sie eine Abteilung an: \\ \\
+Name \textcolor{magenta}{Development} \\
+Land \textcolor{magenta}{Deutschland} \\
+Stadt \textcolor{magenta}{Berlin} \\ \\
+Bitte legen Sie einen Mitarbeiter an: \\ \\
+Vorname \textcolor{magenta}{Hans} \\
+Nachname \textcolor{magenta}{Müller} \\ \\
+Sie haben folgenden Mitarbeiter angelegt:
+
+Der Mitarbeiter 	668	Hans	Müller arbeitet in der Abteilung Development in Berlin \\ \\
+Möchten Sie noch einen Mitarbeiter anlegen? \\
+j für ja und n für beenden \\
+\textcolor{magenta}{n} \\ \\
+Auf Wiedersehen!
+}}
+
+\newpage
+\subsection*{Für die Aufgabe steht folgendes Skeleton zur Verfügung:}
+
+\begin{listing}[ht]
+\inputminted[frame=lines, style=fruity, bgcolor=black]{Java}{App.java}
+\caption{App.java}
+\end{listing}
+\newpage
+\begin{listing}[ht]
+\inputminted[frame=lines, style=fruity, bgcolor=black]{Java}{Employee.java}
+\caption{Employee.java}
+\end{listing}
+\newpage
+\begin{listing}[ht]
+\inputminted[frame=lines, style=fruity, bgcolor=black]{Java}{Department.java}
+\caption{Department.java}
+\end{listing}
+
+\newpage
+\section{Zusatz}
+\begin{itemize}
+	\item Alle Mitarbeiter sollen in ein Array gespeichert werden.
+	\item Wurde der Mitarbeiter erfolgreich angelegt, soll er ausgegeben werden.
+	\item Nach beenden des Anlegevorgangs sollen alle angelegten Mitarbeiter 			ausgegeben werden.
+	\item Ist das Array voll, also kann kein Mitarbeiter mehr eingefügt werden soll 			das Array verdoppelt werden.
+	\item Während der Erstellung neuer Mitarbeiter soll es die Möglichkeit geben 			aus den jeweiligen Departments zu wählen.
+\end{itemize}
+
+\subsection*{Hinweise}
+\begin{itemize}
+	\item Achtung auf \textit{NullPointerExceptions} bei Arrays!
+	\item Mit \textit{.equalsIgnoreCase("")} können Strings verglichen 	werden. Hier wird nicht auf die Groß-/Kleinschreibung geachtet beim vergleich A.equals("a").
+
+	\item Eine foreach-Schleife könnte hilfreich sein. Ist eventuell lesbarer.
+
+	\item Nicht auf das Schlüsselwort static vergessen.
+
+	\item Die IDs sollen bei jedem Mitarbeiter eindeutig sein.\end{itemize}
+\end{document}  
+
+
+
+
+
+
+
