@@ -1,0 +1,85 @@
+\documentclass[12pt, oneside]{article}
+%packages
+\usepackage{geometry}                		                  		
+\usepackage{graphicx}				
+\usepackage{xcolor}
+\usepackage{minted}							
+\usepackage{amssymb}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tikzsymbols}
+\usepackage[naustrian]{babel}
+\usepackage{amsmath}
+%layout
+\geometry{letterpaper} 
+
+\title{
+Coding Challenge \\
+\Large{SumOfTwo}
+\vspace{0.3cm}
+}
+\begin{document}
+ \setlength{\parindent}{0em} 
+\maketitle
+
+\section{Das Problem}
+Gegeben sind zwei int-Arrays a und b, mit beliebigen Werten und ein Zielwert \\ (target value) v. Finde heraus, ob es ein Nummernpaar gibt, wobei ein Wert aus a und der andere Wert aus b sein muss, die in Summe den Zielwert v ergeben. Es soll true zurückgegeben werden, falls es so ein Paar gibt, andernfalls false.\\
+
+\section{Aufgabe}
+Schreibe die Methode \textit{sumOfTwo(int[] a, int[] b, int v)} wie oben beschrieben. \\ Die Lösung soll möglichst effizient sein, also \textcolor{red}{\textbf{kein!!}} Bruteforce.
+
+\section{Beispiele}
+Hier folgen zwei Beispiele für das oben beschriebene Problem:
+\begin{minted}{Java}
+int[] a = [1,2,3];
+int[] b = [10,20,30,40];
+int v = 42;
+\end{minted}
+
+Die Methode \textit{sumOfTwo} gibt true zurück, da $40+2=42$ ist.
+\newpage
+a und b müssen nicht sortiert sein und können auch mehrmals den gleichen Wert beinhalten. 
+\begin{minted}{Java}
+int[] a = {0,0,-5,30212};
+int[] b = {-10,40,-3,9};
+int v = -8;
+\end{minted}
+Es wird wieder true returned, da $-5 + (-3) = -8$ ist.
+
+\section{Hinweise}
+\begin{itemize}
+	\item \textcolor{red}{Wichtig: } Denke daran, dass Arrays in Java $2^{31}-1$ Elemente enthalten können $\rightarrow$ kein Bruteforce.
+	\item HashSets sind hilfreich, da sie einfügen und lesen in effizienter und vor allem konstanter Zeit ermöglichen. \\
+		\url{https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/HashSet.html} \\
+	\item Natürlich könnt ihr die Aufgabe auch in Kotlin schreiben \Winkey
+	\end{itemize}
+	
+	\begin{center}
+	\begin{minted}[frame=single]{Java}
+	// HashSet für int - Werte
+	HashSet<Integer> hashSet = new HashSet<>();
+	\end{minted}
+	\end{center}
+Mit Bruteforce ist gemeint, dass jedes einzelne Element aus a mit jedem einzelnen Element aus b addiert wird und danach mit v verglichen wird. Hier ein Beispiel:
+\begin{center}
+\begin{align*}
+	a = [1,2,3] \\
+	b = [4,5,6] \\
+	v = 7 \\ \\
+	a[0] = 1 \\
+	b[0] + a[0] = 7? \\
+	. \\
+	. \\
+	b[3] + a[0] = 7 \\
+	\text{return true}
+	\end{align*}
+\end{center}
+\end{document}  
+
+
+
+
+
+
+
