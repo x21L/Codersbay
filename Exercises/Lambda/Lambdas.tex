@@ -1,0 +1,63 @@
+\documentclass[12pt, oneside]{article}
+%packages
+\usepackage{geometry}                		                  		
+\usepackage{graphicx}				
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tcolorbox}					
+\usepackage{amssymb}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage[naustrian]{babel}
+\usepackage{amsmath}
+\usepackage{minted}
+%layout
+\geometry{letterpaper} 
+
+\title{
+Übung \\ \vspace{0.3cm}
+\Large{Lambdas} 
+}
+\begin{document}
+ \setlength{\parindent}{0em} 
+\maketitle
+\textcolor{red}{Besprechung am 4.April 2020}
+\section{Die Aufgabe}
+Programmiere ein funktionales Interface mit dem Namen NumberSelector, dessen Methode \textit{check} einen int-Wert als Parameter hat und boolean returnt. \\ \\
+	Implementiere in NumberSelector eine statische Methode \textit{findFirst}, die als \\ Parameter einen NumberSelector und eine int-Zahl hat. Die Methode soll die ersten \\ $n$ int-Werte $n > 0$ und $n < 1.000.000$ finden, für die der Selector true zurückgibt und diese als int[]-Array zurückgeben. \\ \\
+	\textbf{Folgendes soll gefunden werden:}
+	\begin{itemize}
+		\item die ersten 10 Zahlen, die durch 7 teilbar sind
+		\item die ersten 10 Primzahlen \\$\left(p_{n}\right)_{n \in \mathbb{N}}=(2,3,5,7,11,13,17,19,23,29,\ldots)$
+		\item die Zahlen von 0 bis 20
+	\end{itemize}
+\vspace{0.5cm}	
+\begin{tcolorbox}
+		Ein functional Interface gibt es in Java seit der Version 8 (seit den Lambdas).
+		Dieses Interface besitzt nur \textbf{eine} abstrakte-Methode \textbf{nicht} \\ implementierte Methode. Dieses Interface kann noch zusätzliche statische \\ implementierte und default-Methoden besitzen. Sie besitzen außerdem die \\ Annotation @FunctionalInterface. \\ Solche Schnittstellen werden von üblicherweise von Lambda-Expressions \\ implementiert.
+\end{tcolorbox}
+
+\subsection*{Ein Beispiel}
+
+\begin{listing}[ht]
+\begin{minted}[frame=single, style=vim, bgcolor=black]{java}
+@FunctionalInterface
+public interface MyFunctionalInterface {
+   void execute();
+}
+\end{minted}
+\end{listing}
+
+\subsection*{Merkhilfe für die Lambda-Syntax}
+\begin{align*}
+	(\text{LambdaParameter}) \rightarrow \{\text{Anweisungen}\}
+\end{align*}
+\end{document}  
+
+
+
+
+
+
+
