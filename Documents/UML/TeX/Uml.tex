@@ -1,10 +1,10 @@
 \documentclass[12pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
 \usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
-\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+\geometry{a4paper}                   		% ... or a4paper or a5paper or ... 
 %\geometry{landscape}                		% Activate for rotated page geometry
 %\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
 \usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
-								% TeX will automatically convert eps --> pdf in pdflatex		
+						% TeX will automatically convert eps --> pdf in pdflatex		
 \usepackage{amssymb}
 \usepackage{tikz}
 \usepackage{pgf-umlcd}
@@ -57,9 +57,15 @@ Im Regelfall werden nur die \"offentlichen Schnittstellen eingezeichnet, aufgrun
 %\vspace{0.5cm}
 
 \begin{center}
-	\begin{tikzpicture}%[show background grid]		\begin{class}[text width=8cm]{BankAccount}{0,0}			\attribute{+ owner : String}			\attribute{+ balance : Dollars}			\operation{- deposit( amount : Dollars )}			\operation{$\sim$ withdrawal( amount : Dollars )} \operation{\#
+	\begin{tikzpicture}%[show background grid]
+		\begin{class}[text width=8cm]{BankAccount}{0,0}
+			\attribute{+ owner : String}
+			\attribute{+ balance : Dollars}
+			\operation{- deposit( amount : Dollars )}
+			\operation{$\sim$ withdrawal( amount : Dollars )} \operation{\#
 			updateBalance( newBalance : Dollars)} 
-		\end{class}	\end{tikzpicture}
+		\end{class}
+	\end{tikzpicture}
 \end{center}
 
 \subsection{Abstrakte Klassen und Interfaces}
@@ -72,11 +78,20 @@ Für die Kennzeichnung von Interfaces und abstrakten Klassen wird $<<$interface$
 \begin{tikzpicture}
 	%abstract class
 	\begin{abstractclass}[text width=6cm]{BankAccount}{0,4}
-		\attribute{owner : String}		\attribute{balance : Dollars = 0}		\operation{deposit(amount : Dollars)} \operation[0]{withdrawl(amount : Dollars)}	\end{abstractclass}
-	%interface	\begin{interface}{Person}{7,4}		\attribute{firstName : String} \attribute{lastName : String}	\end{interface} 
+		\attribute{owner : String}
+		\attribute{balance : Dollars = 0}
+		\operation{deposit(amount : Dollars)} \operation[0]{withdrawl(amount : Dollars)}
+	\end{abstractclass}
+	%interface
+	\begin{interface}{Person}{7,4}
+		\attribute{firstName : String} \attribute{lastName : String}
+	\end{interface} 
 	%class
 	\begin{class}[text width=6cm]{$BankAccount$}{0,0}
-		\attribute{owner : String}		\attribute{balance : Dollars = 0}		\operation{deposit(amount : Dollars)} \operation[0]{withdrawl(amount : Dollars)}	\end{class}
+		\attribute{owner : String}
+		\attribute{balance : Dollars = 0}
+		\operation{deposit(amount : Dollars)} \operation[0]{withdrawl(amount : Dollars)}
+	\end{class}
 \end{tikzpicture}
 \end{center}
 \vspace{0.5cm}
@@ -88,19 +103,41 @@ Eine Vererbungsbeziehung wird mittels Pfeilen mit einer durchzogenen Linie darge
 
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
-	%BankAccount	\begin{class}[text width=6cm]{BankAccount}{0,0} \attribute{owner : String}		\attribute{balance : Dollars = 0}		\operation{deposit(amount : Dollars)} \operation[0]{withdrawl(amount : Dollars)}	\end{class}
-	%CheckingAccount	\begin{class}[text width=8cm]{CheckingAccount }{-5,-5}		\inherit{BankAccount} \attribute{insufficientFundsFee : Dollars}		\operation{processCheck ( checkToProcess : Check)}
-		\operation{withdrawal ( amount : Dollars )}	\end{class}
+	%BankAccount
+	\begin{class}[text width=6cm]{BankAccount}{0,0} \attribute{owner : String}
+		\attribute{balance : Dollars = 0}
+		\operation{deposit(amount : Dollars)} \operation[0]{withdrawl(amount : Dollars)}
+	\end{class}
+	%CheckingAccount
+	\begin{class}[text width=8cm]{CheckingAccount }{-5,-5}
+		\inherit{BankAccount} \attribute{insufficientFundsFee : Dollars}
+		\operation{processCheck ( checkToProcess : Check)}
+		\operation{withdrawal ( amount : Dollars )}
+	\end{class}
 	%SavingsAccount
-	\begin{class}[text width=7cm]{SavingsAccount}{5,-5}		\inherit{BankAccount} \attribute{annualInteresRate : Percentage}		\operation{depositMonthlyInterest ( )}		\operation{withdrawal ( amount : Dollars )}	\end{class}\end{tikzpicture}
+	\begin{class}[text width=7cm]{SavingsAccount}{5,-5}
+		\inherit{BankAccount} \attribute{annualInteresRate : Percentage}
+		\operation{depositMonthlyInterest ( )}
+		\operation{withdrawal ( amount : Dollars )}
+	\end{class}
+\end{tikzpicture}
 \end{center}
 
 Implementierungen von \textbf{Interfaces} werden mit strichlierten Pfeilen dargestellt.
 \begin{center}
 \begin{tikzpicture}%[show background grid]
-	%Person	\begin{interface}{Person}{0,0} \attribute{firstName : String}		\attribute{lastName : String} \end{interface}
-	%Professor	\begin{class}{Professor}{-5,-5}		\implement{Person}		\attribute{salary : Dollars}	\end{class}
-	%Student	\begin{class}{Student}{5,-5} \implement{Person}		\attribute{major : String} \end{class}\end{tikzpicture}
+	%Person
+	\begin{interface}{Person}{0,0} \attribute{firstName : String}
+		\attribute{lastName : String} \end{interface}
+	%Professor
+	\begin{class}{Professor}{-5,-5}
+		\implement{Person}
+		\attribute{salary : Dollars}
+	\end{class}
+	%Student
+	\begin{class}{Student}{5,-5} \implement{Person}
+		\attribute{major : String} \end{class}
+\end{tikzpicture}
 \end{center}
 
 \newpage
@@ -111,7 +148,12 @@ Implementierungen von \textbf{Interfaces} werden mit strichlierten Pfeilen darge
 	A benutzt B
 \end{center}
 \begin{center}
-\begin{tikzpicture}% \draw[help lines] (-7,-6) grid (6,0);	\begin{class}[text width=2cm]{A}{0,0}\end{class}	\begin{class}[text width=2cm]{B}{9,0}\end{class}\unidirectionalAssociation{A}{}{}{B}\end{tikzpicture}
+\begin{tikzpicture}
+% \draw[help lines] (-7,-6) grid (6,0);
+	\begin{class}[text width=2cm]{A}{0,0}\end{class}
+	\begin{class}[text width=2cm]{B}{9,0}\end{class}
+\unidirectionalAssociation{A}{}{}{B}
+\end{tikzpicture}
 \end{center}
 
 \textbf{Aggregation} hat-Beziehung \\ 
@@ -119,7 +161,12 @@ Implementierungen von \textbf{Interfaces} werden mit strichlierten Pfeilen darge
 	A hat ein B
 \end{center}
 \begin{center}
-\begin{tikzpicture}% \draw[help lines] (-7,-6) grid (6,0);	\begin{class}[text width=2cm]{A}{0,0}\end{class}	\begin{class}[text width=2cm]{B}{9,0}\end{class}\aggregation{A}{}{}{B}\end{tikzpicture}
+\begin{tikzpicture}
+% \draw[help lines] (-7,-6) grid (6,0);
+	\begin{class}[text width=2cm]{A}{0,0}\end{class}
+	\begin{class}[text width=2cm]{B}{9,0}\end{class}
+\aggregation{A}{}{}{B}
+\end{tikzpicture}
 \end{center}
 
 \textbf{Generalisierung} ist-Beziehung \\ 
@@ -127,7 +174,11 @@ Implementierungen von \textbf{Interfaces} werden mit strichlierten Pfeilen darge
 	B ist ein A
 \end{center}
 \begin{center}
-\begin{tikzpicture}% \draw[help lines] (-7,-6) grid (6,0);	\begin{class}[text width=2cm]{A}{0,0}\end{class}	\begin{class}[text width=2cm]{B}{0,-2}\inherit{A}\end{class}\end{tikzpicture}
+\begin{tikzpicture}
+% \draw[help lines] (-7,-6) grid (6,0);
+	\begin{class}[text width=2cm]{A}{0,0}\end{class}
+	\begin{class}[text width=2cm]{B}{0,-2}\inherit{A}\end{class}
+\end{tikzpicture}
 \end{center}
 
 \vspace{0.5cm}
@@ -141,7 +192,12 @@ class A {
 }
 \end{lstlisting}
 \begin{center}
-\begin{tikzpicture}% \draw[help lines] (-7,-6) grid (6,0);	\begin{class}[text width=2cm]{A}{0,0}\end{class}	\begin{class}[text width=2cm]{B}{9,0}\end{class}\aggregation{A}{b}{}{B}\end{tikzpicture}
+\begin{tikzpicture}
+% \draw[help lines] (-7,-6) grid (6,0);
+	\begin{class}[text width=2cm]{A}{0,0}\end{class}
+	\begin{class}[text width=2cm]{B}{9,0}\end{class}
+\aggregation{A}{b}{}{B}
+\end{tikzpicture}
 \end{center}
 
 \newpage
@@ -159,9 +215,14 @@ class A {
 \end{lstlisting}
 
 \begin{center}
-\begin{tikzpicture}% \draw[help lines] (-7,-6) grid (6,0);	\begin{class}[text width=2cm]{A}{0,0}\end{class}	\begin{class}[text width=2cm]{B}{9,0}\end{class}
-	\begin{class}[text width=2cm]{C}{9,-2}\end{class}	\unidirectionalAssociation{A}{}{}{B}
-	\unidirectionalAssociation{A}{}{}{C}\end{tikzpicture}
+\begin{tikzpicture}
+% \draw[help lines] (-7,-6) grid (6,0);
+	\begin{class}[text width=2cm]{A}{0,0}\end{class}
+	\begin{class}[text width=2cm]{B}{9,0}\end{class}
+	\begin{class}[text width=2cm]{C}{9,-2}\end{class}
+	\unidirectionalAssociation{A}{}{}{B}
+	\unidirectionalAssociation{A}{}{}{C}
+\end{tikzpicture}
 \end{center}
 
 \vspace{1cm}
@@ -172,31 +233,46 @@ Oft wird zwischen beiden Beziehungen nicht unterschieden. Beides wird meist als 
 \begin{center}
 Jedes A benutzt genau $1$ B \\ \vspace{0.5cm}
 \begin{tikzpicture}
-	\begin{class}[text width=2cm]{A}{0,0} \end{class}	\begin{class}[text width=2cm]{B}{5,0}\end{class}	\unidirectionalAssociation{A}{}{}{B}\end{tikzpicture}
+	\begin{class}[text width=2cm]{A}{0,0} \end{class}
+	\begin{class}[text width=2cm]{B}{5,0}\end{class}
+	\unidirectionalAssociation{A}{}{}{B}
+\end{tikzpicture}
 \end{center}
 
 \begin{center}
 Jedes A benutzt genau $3$ B und jedes B wird von 2 A benutzt \\ \vspace{0.5cm}
 \begin{tikzpicture}
-	\begin{class}[text width=2cm]{A}{0,0} \end{class}	\begin{class}[text width=2cm]{B}{5,0}\end{class}	\association{A}{B}{2}{B}{3}{A}\end{tikzpicture}
+	\begin{class}[text width=2cm]{A}{0,0} \end{class}
+	\begin{class}[text width=2cm]{B}{5,0}\end{class}
+	\association{A}{B}{2}{B}{3}{A}
+\end{tikzpicture}
 \end{center}
 
 \begin{center}
 Jedes A benutzt genau $2$ bis $4$ B \\ \vspace{0.5cm}
 \begin{tikzpicture}
-	\begin{class}[text width=2cm]{A}{0,0} \end{class}	\begin{class}[text width=2cm]{B}{5,0}\end{class}	\unidirectionalAssociation{A}{}{2..4}{B}\end{tikzpicture}
+	\begin{class}[text width=2cm]{A}{0,0} \end{class}
+	\begin{class}[text width=2cm]{B}{5,0}\end{class}
+	\unidirectionalAssociation{A}{}{2..4}{B}
+\end{tikzpicture}
 \end{center}
 
 \begin{center}
 Jedes A benutzt kann ein B oder nicht (Optinialit\"at) \\ \vspace{0.5cm}
 \begin{tikzpicture}
-	\begin{class}[text width=2cm]{A}{0,0} \end{class}	\begin{class}[text width=2cm]{B}{5,0}\end{class}	\unidirectionalAssociation{A}{}{0..1}{B}\end{tikzpicture}
+	\begin{class}[text width=2cm]{A}{0,0} \end{class}
+	\begin{class}[text width=2cm]{B}{5,0}\end{class}
+	\unidirectionalAssociation{A}{}{0..1}{B}
+\end{tikzpicture}
 \end{center}
 
 \begin{center}
 Jedes A kann null oder beliebig viele B benutzen \\ \vspace{0.5cm}
 \begin{tikzpicture}
-	\begin{class}[text width=2cm]{A}{0,0} \end{class}	\begin{class}[text width=2cm]{B}{5,0}\end{class}	\unidirectionalAssociation{A}{}{*}{B}\end{tikzpicture}
+	\begin{class}[text width=2cm]{A}{0,0} \end{class}
+	\begin{class}[text width=2cm]{B}{5,0}\end{class}
+	\unidirectionalAssociation{A}{}{*}{B}
+\end{tikzpicture}
 \end{center}
 
 Die Kardinalit\"at wird am Anfang des Modellierens oft weggelassen, au\ss{}er *.
@@ -208,14 +284,26 @@ Nat\"urlich lassen sich auch Packages darstellen. \textit{Accounts} ist der Name
 \begin{tikzpicture} [scale=0.70]
 	%Accounts
 	\begin{package}{Accounts}
-	%BankAccount	\begin{class}[text width=7cm]{BankAccount}{0,0} 
-		\attribute{owner : String}		\attribute{balance : Dollars = 0}		\operation{deposit(amount : Dollars)} 
-		\operation[0]{withdrawl(amount : Dollars)}	\end{class}
-	%CheckingAccount	\begin{class}[text width=6cm]{CheckingAccount }{-5,-5}		\inherit{BankAccount} \attribute{insufficientFundsFee : Dollars}
-		\operation{withdrawal (amount : Dollars)}	\end{class}
-	%SavingsAccount	\begin{class}[text width=6cm]{SavingsAccount}{5,-5}		\inherit{BankAccount} 
-		\attribute{annualInteresRate : Percentage}		\operation{withdrawal (amount : Dollars)}
-	\end{class}	\end{package}\end{tikzpicture}
+	%BankAccount
+	\begin{class}[text width=7cm]{BankAccount}{0,0} 
+		\attribute{owner : String}
+		\attribute{balance : Dollars = 0}
+		\operation{deposit(amount : Dollars)} 
+		\operation[0]{withdrawl(amount : Dollars)}
+	\end{class}
+	%CheckingAccount
+	\begin{class}[text width=6cm]{CheckingAccount }{-5,-5}
+		\inherit{BankAccount} \attribute{insufficientFundsFee : Dollars}
+		\operation{withdrawal (amount : Dollars)}
+	\end{class}
+	%SavingsAccount
+	\begin{class}[text width=6cm]{SavingsAccount}{5,-5}
+		\inherit{BankAccount} 
+		\attribute{annualInteresRate : Percentage}
+		\operation{withdrawal (amount : Dollars)}
+	\end{class}
+	\end{package}
+\end{tikzpicture}
 \end{center}
 
 \newpage
@@ -224,34 +312,50 @@ Nat\"urlich lassen sich auch Packages darstellen. \textit{Accounts} ist der Name
 \subsection{Webshop}
 \begin{center}
 \begin{tikzpicture}[scale=0.7, show background grid]
-	%Shopping	\begin{interface}[text width=4cm]{Shopping}{0,0} 		\operation{addItem()} 
+	%Shopping
+	\begin{interface}[text width=4cm]{Shopping}{0,0} 
+		\operation{addItem()} 
 		\operation{removeItem()}
 		\operation{placeOrder()}
-		\operation{cancelOrder()}	\end{interface}
-	%ShoppingCart	\begin{class}[text width=4cm]{ShoppingCart}{0,-8}		\inherit{Shopping} 
+		\operation{cancelOrder()}
+	\end{interface}
+	%ShoppingCart
+	\begin{class}[text width=4cm]{ShoppingCart}{0,-8}
+		\inherit{Shopping} 
 		\attribute{total : int}
-		\attribute{tax : int}		\operation{addItem()} 
+		\attribute{tax : int}
+		\operation{addItem()} 
 		\operation{removeItem()}
 		\operation{placeOrder()}
-		\operation{cancelOrder()}	\end{class}
+		\operation{cancelOrder()}
+	\end{class}
 	%Customer
-	\begin{class}[text width=4cm]{Customer}{18,-9}		\attribute{name : String}
+	\begin{class}[text width=4cm]{Customer}{18,-9}
+		\attribute{name : String}
 		\attribute{address : String}
-		\attribute{email : String}	\end{class}
+		\attribute{email : String}
+	\end{class}
 	%SpecialCustomer
-	\begin{class}[text width=4cm]{SpecialCustomer}{18,-15.2}		\attribute{discount : int}
+	\begin{class}[text width=4cm]{SpecialCustomer}{18,-15.2}
+		\attribute{discount : int}
 		\operation{selectCard()}
-		\inherit{Customer}	\end{class}
+		\inherit{Customer}
+	\end{class}
 	%CreditCard
-	\begin{class}[text width=4cm]{CreditCard}{8,-14.5}		\attribute{owner : String}
+	\begin{class}[text width=4cm]{CreditCard}{8,-14.5}
+		\attribute{owner : String}
 		\attribute{number : long}
 		\attribute{expires : Date}
-		\operation{charge()}	\end{class}
+		\operation{charge()}
+	\end{class}
 	%Product
-	\begin{class}[text width=4cm]{Product}{12,-19.7}		\attribute{name : String}
-		\attribute{price : int}	\end{class}
+	\begin{class}[text width=4cm]{Product}{12,-19.7}
+		\attribute{name : String}
+		\attribute{price : int}
+	\end{class}
 	%Item and relations
-	\begin{class}[text width=4cm]{Item}{0,-20}		\attribute{quantity : int}
+	\begin{class}[text width=4cm]{Item}{0,-20}
+		\attribute{quantity : int}
 	\end{class}
 	%Associations
 	\unidirectionalAssociation{ShoppingCart}{card}{0..1}{CreditCard}
@@ -259,7 +363,8 @@ Nat\"urlich lassen sich auch Packages darstellen. \textit{Accounts} ist der Name
 	\unidirectionalAssociation{ShoppingCart}{customer}{}{Customer}
 	\unidirectionalAssociation{Customer}{}{cart}{ShoppingCart}
 	\unidirectionalAssociation{ShoppingCart}{items}{*}{Item}
-	\unidirectionalAssociation{Item}{product}{*}{Product}\end{tikzpicture}
+	\unidirectionalAssociation{Item}{product}{*}{Product}
+\end{tikzpicture}
 \end{center}
 
 \section{Weiterf\"uhrende Links}
