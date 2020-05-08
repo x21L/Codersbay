@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nd}{@FunctionalInterface}
+\PYG{k+kd}{public} \PYG{k+kd}{interface} \PYG{n+nc}{MyFunctionalInterface} \PYG{p}{\PYGZob{}}
+   \PYG{k+kt}{void} \PYG{n+nf}{execute}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

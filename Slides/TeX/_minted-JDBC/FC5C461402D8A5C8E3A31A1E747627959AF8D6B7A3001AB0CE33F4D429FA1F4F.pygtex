@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{package} \PYG{n+nn}{sqlapplication}\PYG{p}{;}
+
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{Singleton} \PYG{p}{\PYGZob{}}
+
+   \PYG{k+kd}{private} \PYG{k+kd}{static} \PYG{n}{Singleton} \PYG{n}{instance} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Singleton}\PYG{p}{();}
+
+   \PYG{k+kd}{private} \PYG{n+nf}{Singleton}\PYG{p}{()\PYGZob{}}\PYG{c+cm}{/*...*/}\PYG{p}{\PYGZcb{}}
+
+   \PYG{c+c1}{// Get the only object available}
+   \PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{n}{Singleton} \PYG{n+nf}{getInstance}\PYG{p}{()\PYGZob{}}
+      \PYG{k}{return} \PYG{n}{instance}\PYG{p}{;}
+   \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

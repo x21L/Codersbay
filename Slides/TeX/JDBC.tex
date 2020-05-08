@@ -1,6 +1,6 @@
 \documentclass[class=beamer, crop=false]{standalone}
 %packages
-\usepackage[subpreambles=true]{standalone}
+%\usepackage[subpreambles=true]{standalone}
 \usepackage{import}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -11,9 +11,9 @@
 \usepackage{url}
 \usepackage{framed}
 %title
-\title{JDBC â€“ Java Database Connectivity \\ EinfÃ¼hrung}
+\title{JDBC -€“ Java Database Connectivity \\ Einführung}
 \author{Lukas Wais}
-\institute{Codersbay}
+\institute{Coders.Bay}
 \date{\today}
 %\pgfpagesuselayout{}[a4paper]
 %Information to be included in the title page:
@@ -34,14 +34,14 @@
 \end{frame}
 
 \section{Was ist JDBC?}
-\subsection{EinfÃ¼hrung}
+\subsection{Einführung}
 
 \begin{frame}
 	\frametitle{Overview}
 	\framesubtitle{Datenbank APIs ohne JDBC}
 	\begin{center}
 	\begin{figure}
-  		\includegraphics[width=\linewidth]{./img/apis.jpg}
+  		\includegraphics[width=\linewidth]{./img/JDBC/apis.jpg}
   		\caption{Datenbank APIs ohne JDBC}
   		\label{Datenbank APIs ohne JDBC}
 	\end{figure}
@@ -54,7 +54,7 @@
 	\framesubtitle{Datenbank APIs ohne JDBC}
 	\begin{center}
 	\begin{figure}
-  		\includegraphics[width=\linewidth]{./img/apisJDBC.jpg}
+  		\includegraphics[width=\linewidth]{./img/JDBC/apisJDBC.jpg}
   		\caption{Datenbank APIs mit JDBC}
   		\label{Datenbank APIs mit JDBC}
 	\end{figure}
@@ -62,7 +62,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Datenbankzugriffsschnittstelle fÃ¼r Java}
+	\frametitle{Datenbankzugriffsschnittstelle für Java}
 	\begin{itemize}
 		\item abstrakt und datenbankneutral
 		\item vergleichbar mit ODBC
@@ -77,7 +77,7 @@
 	\begin{itemize}
 		\item \textbf{DriverManager:} Einstiegspunkt, Laden von Treibern
 		\item \textbf{Connection:} Datenbankverbindung
-		\item \textbf{Statement:} AusfÃ¼hrung von Anweisungen Ã¼ber eine Verbindung
+		\item \textbf{Statement:} Ausführung von Anweisungen über eine Verbindung
 		\item \textbf{ResultSet:} verwaltet Ergebnisse einer Anfrage, Zugriff auf einzelne Spalten
 	\end{itemize}
 \end{frame}
@@ -89,7 +89,7 @@
 	\framesubtitle{Diagramm}
 	\begin{center}
 	\begin{figure}
-  		\includegraphics[width=0.35\linewidth]{./img/Connection.jpg}
+  		\includegraphics[width=0.35\linewidth]{./img/JDBC/Connection.jpg}
   		\caption{Datenbankverbindung}
   		\label{Datenbankverbindung}
 	\end{figure}
@@ -97,7 +97,7 @@
 \end{frame}
 \begin{frame}
 	\frametitle{Ablauf der Datenbankverbindung}
-	\framesubtitle{ErklÃ¤rung}
+	\framesubtitle{Erklärung}
 	\begin{itemize}
 		\item Aufbau einer Verbindung zur DB
 		\begin{itemize}
@@ -111,7 +111,7 @@
 		\end{itemize}
 	\item Verarbeiten der Anfrageergebnisse
 		\begin{itemize}
-			\item Navigation Ã¼ber Ergebnisrelation
+			\item Navigation über Ergebnisrelation
 			\item Zugriff auf Spalten
 		\end{itemize}
 	\end{itemize}
@@ -131,7 +131,7 @@
 	\framesubtitle{Typabbildung MySQL $\rightarrow$ Java}
 	\begin{center}
 	\begin{figure}
-  		\includegraphics[width=0.9\linewidth]{./img/mapings}
+  		\includegraphics[width=0.9\linewidth]{./img/JDBC/mapings}
   		\caption{Auszug Typabbildung}
   		\label{Auszug Typabbildung}
 	\end{figure}
@@ -147,10 +147,10 @@
 \framesubtitle{Entwurfsmuster, Architekturmuster und konkreter Architektur}
 	\begin{block}{%Entwurfsmuster, Architekturmuster und konkreter Architektur
 	}
-		WÃ¤hrend eine \textbf{konkrete Architektur} neben der ErfÃ¼llung nicht funktionaler Eigenschaften auch \textbf{konkreten funktionalen Anforderungen} genÃ¼gt, stehen bei einer Referenzarchitektur und bei einem \textbf{Architekturmuster} bzw. \textbf{Entwurfsmuster} die nicht funktionalen Anforderungen  wie \textbf{Standardisierung, VerstÃ¤ndlichkeit, Einfachheit} und \textbf{AusbaufÃ¤higkeit} im Vordergrund. \cite{architektur}
+		WÃ¤hrend eine \textbf{konkrete Architektur} neben der Erfüllung nicht funktionaler Eigenschaften auch \textbf{konkreten funktionalen Anforderungen} genügt, stehen bei einer Referenzarchitektur und bei einem \textbf{Architekturmuster} bzw. \textbf{Entwurfsmuster} die nicht funktionalen Anforderungen  wie \textbf{Standardisierung, Verständlichkeit, Einfachheit} und \textbf{Ausbaufähigkeit} im Vordergrund. \cite{architektur}
 	\end{block}
 	
-	Solche Muster sind nicht auf Java beschrÃ¤nkt, sondern kÃ¶nnen bei allen objektorientierten Sprachen angewendet werden.	
+	Solche Muster sind nicht auf Java beschränkt, sondern können bei allen objektorientierten Sprachen angewendet werden.	
 \end{frame}
 
 \begin{frame}
@@ -162,7 +162,7 @@
 \begin{frame}
 \frametitle{Entwurfsmuster vs. Architekturmuster}
 	\begin{block}{Unterschied Architekturmuster und Entwurfsmuster}
-		\textbf{Entwurfsmuster} stellen \textbf{feinkÃ¶rnige Muster} dar, wÃ¤hrend \textbf{Architekturmuster grobkÃ¶rnige Muster} sind. \cite{architektur}
+		\textbf{Entwurfsmuster} stellen \textbf{feinkörnige Muster} dar, während \textbf{Architekturmuster grobkörnige Muster} sind. \cite{architektur}
 	\end{block}
 \end{frame}
 
@@ -189,7 +189,7 @@
 \frametitle{Definition}
 %\framesubtitle{Definition}
 \begin{block}{Definition Singleton}
-	Das \textbf{Singleton-Muster} soll gewÃ¤hrleisten, dass eine Klasse nur ein einziges Mal instanziert werden kann. \cite{architektur}
+	Das \textbf{Singleton-Muster} soll gewährleisten, dass eine Klasse nur ein einziges Mal instanziert werden kann. \cite{architektur}
 \end{block}
 
 \end{frame}
@@ -205,8 +205,8 @@
 \begin{frame}
 	\frametitle{Beispiel}
 	%\framesubtitle{Beispiel}
-\begin{exampleblock}{LÃ¶sung}
-	Ein Singleton Objekt kann nur von der Klasse \textit{Singleton} selbst erzeugt werden. Alle Konstruktoren dieser Klasse werden mit dem Zugriffsmodifier \textit{private} gekennzeichnet, so dass andere Klassen kein Objekt unter Verwendung eines Konstruktors erzeugen kÃ¶nnen. Objekte, die die Klassen \textit{Singleton} verwenden mÃ¶chten, erhalten von der Klassenmethode \textit{getInstance()} der Klasse \textit{Singleton} eine Referenz auf das einzig existierende Objekt der Klasse \textit{Singleton} zurÃ¼ck. \cite{architektur}
+\begin{exampleblock}{Lösung}
+	Ein Singleton Objekt kann nur von der Klasse \textit{Singleton} selbst erzeugt werden. Alle Konstruktoren dieser Klasse werden mit dem Zugriffsmodifier \textit{private} gekennzeichnet, so dass andere Klassen kein Objekt unter Verwendung eines Konstruktors erzeugen können. Objekte, die die Klassen \textit{Singleton} verwenden möchten, erhalten von der Klassenmethode \textit{getInstance()} der Klasse \textit{Singleton} eine Referenz auf das einzig existierende Objekt der Klasse \textit{Singleton} zurück. \cite{architektur}
 \end{exampleblock}
 \end{frame}
 
@@ -215,7 +215,7 @@
 	%\framesubtitle{UML Diagramm}
 \begin{center}
 	\begin{figure}
-  		\includegraphics[width=0.9\linewidth]{./img/uml}
+  		\includegraphics[width=0.9\linewidth]{./img/JDBC/uml}
   		\caption{UML Diagramm Singleton}
   		\label{UML Diagramm Singleton}
 	\end{figure}
@@ -228,7 +228,7 @@
 \begin{frame}
 	\frametitle{Sourcecode}
 	\framesubtitle{}
-	\inputminted{java}{/Users/lukas/NetBeansProjects/SQLApplication/src/sqlapplication/Singleton.java}	
+	\inputminted{java}{./src/JDBC/Singleton.java}	
 	\end{frame}
 
 \section{Zugangsdaten}
@@ -239,17 +239,17 @@
 		\item username: codersbay
 		\item password: codersbay
 		\item Link zu phpmyAdmin \url{https://www.db4free.net/phpMyAdmin/}
-		\item Download Connector/J 8.0.19 fÃ¼r MySQL 
+		\item Download Connector/J 8.0.19 für MySQL 
 		\url{https://dev.mysql.com/downloads/connector/j/}
 		
-		\item \colorbox{orange}{\textbf{Link fÃ¼r Java}}\\ "jdbc:mysql://db4free.net:3306/codersbayworld?\\zeroDateTimeBehavior=CONVERT\_TO\_NULL"
+		\item \colorbox{orange}{\textbf{Link für Java}}\\ "jdbc:mysql://db4free.net:3306/codersbayworld?\\zeroDateTimeBehavior=CONVERT\_TO\_NULL"
 	\end{itemize}
 \end{frame}
 \section{Abschluss}
 \begin{frame}
 \frametitle{Verwendung von JDBC}
 	\begin{block}{SQL Statements in Java}
-		SQL Statements sollten aus PerformancegrÃ¼nden sehr sparsam eingesetzt werden. Nach MÃ¶glichkeit das Datenbankmanagementsystem DBMS verwenden. \\
+		SQL Statements sollten aus Performancegründen sehr sparsam eingesetzt werden. Nach Möglichkeit das Datenbankmanagementsystem DBMS verwenden. \\
 		\textbf{Cursor, Trigger, PLSQL, Exceptions, $\ldots$ .}
 	\end{block}
 
@@ -258,7 +258,7 @@
 \begin{frame}
 \frametitle{Referenzen}
         \bibliographystyle{ieeetr}
-        \bibliography{bibfile.bib}
+        \bibliography{bib/bibfile}
 \end{frame}
 
 \end{document}
