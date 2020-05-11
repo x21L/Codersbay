@@ -2,5 +2,7 @@
 \beamer@sectionintoc {1}{Introduction}{3}{0}{1}
 \beamer@subsubsectionintoc {1}{0}{1}{Whoami}{3}{0}{1}
 \beamer@subsubsectionintoc {1}{0}{2}{Do we really need code?}{4}{0}{1}
-\beamer@sectionintoc {2}{Coding Standards}{6}{0}{2}
-\beamer@subsubsectionintoc {2}{0}{1}{Language}{6}{0}{2}
+\beamer@sectionintoc {2}{What is Java?}{6}{0}{2}
+\beamer@subsectionintoc {2}{1}{This is Java}{6}{0}{2}
+\beamer@sectionintoc {3}{Coding Standards}{8}{0}{3}
+\beamer@subsubsectionintoc {3}{0}{1}{Language}{8}{0}{3}
