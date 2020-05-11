@@ -15,21 +15,31 @@
 \headcommand {\beamer@framepages {5}{5}}
 \headcommand {\beamer@sectionpages {3}{5}}
 \headcommand {\beamer@subsectionpages {3}{5}}
-\headcommand {\sectionentry {2}{What is Java?}{6}{What is Java?}{0}}
+\headcommand {\sectionentry {2}{The Programming Language}{6}{The Programming Language}{0}}
 \headcommand {\beamer@subsectionpages {6}{5}}
-\headcommand {\beamer@subsectionentry {0}{2}{1}{6}{This is Java}}
-\headcommand {\slideentry {2}{1}{1}{6/6}{This is Java}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{6}{Programming Languages}}
+\headcommand {\slideentry {2}{1}{1}{6/6}{Programming Languages}{0}}
 \headcommand {\beamer@framepages {6}{6}}
-\headcommand {\slideentry {2}{1}{2}{7/7}{This is Java}{0}}
+\headcommand {\slideentry {2}{1}{2}{7/7}{Programming Languages}{0}}
 \headcommand {\beamer@framepages {7}{7}}
-\headcommand {\beamer@sectionpages {6}{7}}
-\headcommand {\beamer@subsectionpages {6}{7}}
-\headcommand {\sectionentry {3}{Coding Standards}{8}{Coding Standards}{0}}
-\headcommand {\beamer@subsubsectionentry {0}{3}{0}{1}{8}{Language}}
-\headcommand {\slideentry {3}{0}{1}{8/8}{}{0}}
+\headcommand {\slideentry {2}{1}{3}{8/8}{Programming Languages}{0}}
 \headcommand {\beamer@framepages {8}{8}}
-\headcommand {\beamer@partpages {1}{8}}
-\headcommand {\beamer@subsectionpages {8}{8}}
-\headcommand {\beamer@sectionpages {8}{8}}
-\headcommand {\beamer@documentpages {8}}
-\headcommand {\gdef \inserttotalframenumber {8}}
+\headcommand {\slideentry {2}{1}{4}{9/9}{Programming Languages}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\beamer@subsectionpages {6}{9}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{10}{This is Java}}
+\headcommand {\slideentry {2}{2}{1}{10/10}{This is Java}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\slideentry {2}{2}{2}{11/11}{This is Java}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\beamer@sectionpages {6}{11}}
+\headcommand {\beamer@subsectionpages {10}{11}}
+\headcommand {\sectionentry {3}{Coding Standards}{12}{Coding Standards}{0}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{0}{1}{12}{Language}}
+\headcommand {\slideentry {3}{0}{1}{12/12}{}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\beamer@partpages {1}{12}}
+\headcommand {\beamer@subsectionpages {12}{12}}
+\headcommand {\beamer@sectionpages {12}{12}}
+\headcommand {\beamer@documentpages {12}}
+\headcommand {\gdef \inserttotalframenumber {12}}
